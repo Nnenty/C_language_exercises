@@ -52,7 +52,7 @@ char choice(void)
 }
 char input_skip(void)
 {
-    int ch;
+    char ch;
     ch = getchar();
     while (getchar() != '\n')
     {
