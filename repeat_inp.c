@@ -28,6 +28,18 @@ int main(void)
     for (int i = 0; i < quantity; i++)
     {
         puts(input);
+        for (int i = 0; i < 1; i++)
+        {
+            printf(" %s\n", input);
+            for (int i = 0; i < 1; i++)
+            {
+                printf("  %s\n", input);
+                for (int i = 0; i < 1; i++)
+                {
+                    printf(" %s\n", input);
+                }
+            }
+        }
     }
 
     return 0;
