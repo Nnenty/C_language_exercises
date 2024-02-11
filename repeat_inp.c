@@ -9,6 +9,7 @@ int main(void)
 
     puts("Введите строку, которая будет повторена заданное количество раз:");
     fgets(input, 100, stdin);
+
     end = strchr(input, '\n');
     if (end)
     {
