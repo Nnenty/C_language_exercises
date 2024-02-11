@@ -15,6 +15,12 @@ int main(void)
     {
         *end = '\0';
     }
+    else
+    {
+        while (getchar() != '\n')
+        {
+        }
+    }
 
     puts("Введите количество повторов:");
     scanf("%d", &quantity);
