@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define WORD "HeLlO"
 #define SIZE 100
 
 int main(void)
@@ -12,17 +11,29 @@ int main(void)
 
     FILE *file;
     char name[SIZE];
+    char word[SIZE];
+    char *find;
     char ch;
 
     long count = 0;
     long num;
     int index = 0;
 
-    printf("Эта программа добавляет в рандомном месте файла слово %s!\n", WORD);
-    puts("Введите название вашего файла:");
-    scanf("%s", &name);
-    while (getchar() != '\n')
+    puts("Эта программа вставляет в рандомное место вашего файла выбранное слово!");
+    puts("Введите ваше слово:");
+    fgets(word, SIZE, stdin);
+    find = strchr(word, '\n');
+    if (find)
     {
+        *find = '\0';
+    }
+
+    puts("Введите название вашего файла:");
+    fgets(name, SIZE, stdin);
+    find = strchr(name, '\n');
+    if (find)
+    {
+        *find = '\0';
     }
 
     if ((file = fopen(name, "r+")) == NULL)
@@ -52,8 +63,9 @@ int main(void)
 
     fseek(file, num, SEEK_SET);
     putc('!', file);
-    fputs(WORD, file);
+    fputs(word, file);
     putc('!', file);
+    putchar('\n');
 
     rewind(file);
     puts("И содержимое файла после:");
