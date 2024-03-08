@@ -11,7 +11,7 @@ int main(void)
 
     srand((unsigned int)time(0));
 
-    for (int i = 0; i < 99; i++)
+    for (int i = 0; i < size - 1; i++)
     {
         save[i] = rand() % 10 + 1;
     }
@@ -31,9 +31,9 @@ void sort(int *arr, int num)
 
     for (i = 0; i < num - 1; i++)
     {
-        for (intern = i + 1; intern < num; intern++)
+        for (intern = i + 1; intern < num - 1; intern++)
         {
-            if (arr[intern] > arr[i])
+            if (arr[intern] < arr[i])
             {
                 storage = arr[i];
                 arr[i] = arr[intern];
