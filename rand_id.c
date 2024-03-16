@@ -47,6 +47,9 @@ int main(void)
     read(storage);
     fwrite(storage, sizeof(struct id), 1, file);
 
+    fclose(file);
+    free(storage);
+
     return 0;
 }
 char *s_gets(char *str, int size)
