@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-char *itobs(int n, char *ps);
-
 int main(void)
 {
     int num = 129412;
