@@ -24,20 +24,19 @@ int main(void)
 
 void yourtime(double intrv)
 {
-    clock_t wait_until = (clock_t)intrv * CLOCKS_PER_SEC;
-    clock_t last_output_time = 0;
+    clock_t clockintrv = (clock_t)intrv * CLOCKS_PER_SEC;
     clock_t current = clock();
+    clock_t outp = 1;
+    clock_t exm = (clock_t)0;
 
-    while (current < wait_until)
+    while (outp > 0)
     {
-        if ((current - last_output_time) > OUTPUT_SLEEP_INTERVAL)
+        if ((current - exm) > OUTPUT_SLEEP_INTERVAL)
         {
-            double wait_left = difftime(wait_until, current);
+            outp = clockintrv - current;
 
-            printf("Этот цикл закончится через %.1f секунд\n",
-                   wait_left / CLOCKS_PER_SEC);
-
-            last_output_time = current;
+            printf("До конца осталось %.1f секунд\n", (double)outp / CLOCKS_PER_SEC);
+            exm = current;
         }
 
         current = clock();
