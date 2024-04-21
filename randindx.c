@@ -50,7 +50,7 @@ void randindex(int arr[], int size, int index_amount)
 
     for (int i = 0; i < index_amount; i++)
     {
-        index_arr[i] = 0;
+        index_arr[i] = size;
     }
 
     for (iter = 0; iter < index_amount; iter++)
@@ -78,11 +78,15 @@ void randindex(int arr[], int size, int index_amount)
     {
         int num = index_arr[i];
 
+        if (i % 5 == 0 && i != 0)
+        {
+            putchar('\n');
+        }
         printf("%d ", arr[num]);
     }
-    putchar('\n');
+    printf("\n\n");
 
-    printf("Sorted random list of indexes in range %d:\n",
+    printf("Sorted random list of indexes in range %d:",
            index_amount);
     show_indexes(arr, index_arr, index_amount);
 }
@@ -94,9 +98,13 @@ void show_indexes(int arr[], int index_array[], int indxarr_size)
     {
         int num = index_array[i];
 
+        if (i % 5 == 0)
+        {
+            putchar('\n');
+        }
         printf("%d ", arr[num]);
     }
-    putchar('\n');
+    printf("\n\n");
 }
 void index_sort(int index_array[], int indxarr_size)
 {
