@@ -30,7 +30,7 @@ int main(void)
     initialize_piggy(&nafnaf, 2);
     initialize_piggy(&nufnuf, 3);
 
-    puts("Ты Ниф-ниф, Наф-наф или Нуф-нуф?");
+    puts("Ты Ниф-ниф, Наф-наф или Нуф-нуф?(пиши на английском)");
 
     while (s_gets(name, NAMESIZE))
     {
@@ -125,7 +125,7 @@ void show_pig(PIGGY pig)
 
         if (strncmp(pig.pigname, "Nuf", 3) == 0 && process == 30)
         {
-            error = *sgmnt_flt; // thats correct
+            error = *sgmnt_flt; // funny :)
 
             break;
         }
